@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecos de Lluvia | Ciencia Ciudadana</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Colores inspirados en el logo */
+        :root {
+            --primary-dark: #0A3C50;
+            --primary-medium: #1F7A8C;
+            --primary-light: #92DCE5;
+            --accent-green: #6FBE44;
+            --text-light: #f8fafc;
+            --text-dark: #020617;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+        }
+        .text-gradient {
+            background: linear-gradient(to right, var(--primary-light), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .step-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header -->
+    <header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-2">
+                    <img src="image_bf3a5b.jpg" alt="Logo Ecos de Lluvia" class="h-12 w-auto">
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-slate-600 hover:text-cyan-700 transition">Inicio</a>
+                    <a href="#proyecto" class="text-slate-600 hover:text-cyan-700 transition">El Proyecto</a>
+                    <a href="#participa" class="text-slate-600 hover:text-cyan-700 transition">Participa</a>
+                    <a href="#contacto" class="text-slate-600 hover:text-cyan-700 transition">Contacto</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-slate-600 hover:bg-slate-100 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 space-y-2">
+            <a href="#inicio" class="block py-2 px-3 rounded-md text-slate-600 hover:bg-cyan-50">Inicio</a>
+            <a href="#proyecto" class="block py-2 px-3 rounded-md text-slate-600 hover:bg-cyan-50">El Proyecto</a>
+            <a href="#participa" class="block py-2 px-3 rounded-md text-slate-600 hover:bg-cyan-50">Participa</a>
+            <a href="#contacto" class="block py-2 px-3 rounded-md text-slate-600 hover:bg-cyan-50">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="relative overflow-hidden">
+            <div class="absolute inset-0 gradient-bg"></div>
+            <div class="absolute inset-0 bg-no-repeat bg-bottom" style="background-image: url('https://www.transparenttextures.com/patterns/wavecut.png'); opacity: 0.05;"></div>
+            <div class="container mx-auto px-6 py-24 md:py-32 relative z-10 text-center text-white">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
+                    Cada gota cuenta. <br> Sé un <span class="text-gradient">Eco de Lluvia</span>.
+                </h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto text-slate-200 mb-8">
+                    Únete a "Ecos de Lluvia", un proyecto de ciencia ciudadana para monitorear y entender los patrones de la lluvia en nuestra región.
+                </p>
+                <a href="#participa" class="bg-white text-cyan-800 font-bold py-3 px-8 rounded-full hover:bg-slate-200 transition transform hover:scale-105 shadow-lg">
+                    ¡Quiero participar!
+                </a>
+            </div>
+        </section>
+
+        <!-- About the Project Section -->
+        <section id="proyecto" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 section-animate">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">¿Qué es Ecos de Lluvia?</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Un puente entre la comunidad y la ciencia del clima.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <!-- Feature 1 -->
+                    <div class="bg-slate-50 p-8 rounded-xl shadow-md border border-slate-200/50 section-animate" style="transition-delay: 100ms;">
+                        <div class="bg-cyan-100 text-cyan-700 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-slate-800">Misión</h3>
+                        <p class="text-slate-600">Crear una red de observadores voluntarios para recolectar datos de precipitación de alta calidad, ayudando a científicos a comprender mejor el clima local.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="bg-slate-50 p-8 rounded-xl shadow-md border border-slate-200/50 section-animate" style="transition-delay: 200ms;">
+                        <div class="bg-cyan-100 text-cyan-700 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-slate-800">Visión</h3>
+                        <p class="text-slate-600">Fomentar una cultura de conciencia ambiental y participación ciudadana, donde cada persona sea un actor clave en la investigación científica.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="bg-slate-50 p-8 rounded-xl shadow-md border border-slate-200/50 section-animate" style="transition-delay: 300ms;">
+                        <div class="bg-cyan-100 text-cyan-700 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-6">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M20.2 7.8 12 12 3.8 7.8c-.8-.5-.8-1.5.2-1.7l7.2-1.5c.3 0 .5.3.5.5v1.2c0 .3.2.5.5.5h1.5c.3 0 .5-.2.5-.5V4.6c0-.2.2-.5.5-.5l7.2 1.5c1 .2 1 .7.2 1.7z"/><path d="m12 12-8.2 5.2c-.8.5-.8 1.5.2 1.7l7.2 1.5c.3 0 .5-.3.5-.5v-1.2c0-.3.2-.5.5-.5h1.5c.3 0 .5.2.5.5v1.2c0 .2.2.5.5.5l7.2-1.5c1-.2 1-.7.2-1.7L12 12z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-slate-800">Impacto</h3>
+                        <p class="text-slate-600">Tus datos contribuyen directamente a modelos climáticos, gestión de recursos hídricos y sistemas de alerta temprana para fenómenos meteorológicos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Participate Section -->
+        <section id="participa" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 section-animate">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Participar es muy fácil</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">En solo tres pasos, te conviertes en un científico ciudadano.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Step 1 -->
+                    <div class="step-card bg-white p-8 rounded-xl shadow-lg border border-transparent transition-all duration-300 section-animate" style="transition-delay: 100ms;">
+                        <div class="flex items-center mb-4">
+                            <span class="flex items-center justify-center h-12 w-12 rounded-full bg-cyan-600 text-white font-bold text-xl mr-4">1</span>
+                            <h3 class="text-2xl font-semibold text-slate-800">Regístrate</h3>
+                        </div>
+                        <p class="text-slate-600">Crea tu cuenta en nuestra plataforma. Solo te tomará un minuto y nos permitirá asignarte una estación de monitoreo virtual.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="step-card bg-white p-8 rounded-xl shadow-lg border border-transparent transition-all duration-300 section-animate" style="transition-delay: 200ms;">
+                        <div class="flex items-center mb-4">
+                            <span class="flex items-center justify-center h-12 w-12 rounded-full bg-cyan-600 text-white font-bold text-xl mr-4">2</span>
+                            <h3 class="text-2xl font-semibold text-slate-800">Mide</h3>
+                        </div>
+                        <p class="text-slate-600">Instala un pluviómetro simple en un espacio abierto. Después de cada lluvia, anota la cantidad de agua recolectada.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="step-card bg-white p-8 rounded-xl shadow-lg border border-transparent transition-all duration-300 section-animate" style="transition-delay: 300ms;">
+                        <div class="flex items-center mb-4">
+                            <span class="flex items-center justify-center h-12 w-12 rounded-full bg-cyan-600 text-white font-bold text-xl mr-4">3</span>
+                            <h3 class="text-2xl font-semibold text-slate-800">Reporta</h3>
+                        </div>
+                        <p class="text-slate-600">Ingresa a tu cuenta y registra tus mediciones. ¡Tus datos se sumarán al mapa interactivo y a nuestra base de datos al instante!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contacto" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 section-animate">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Ponte en Contacto</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">¿Tienes dudas o sugerencias? Nos encantaría escucharte.</p>
+                </div>
+                
+                <div class="max-w-xl mx-auto bg-slate-50 p-8 rounded-xl shadow-md border border-slate-200/50 section-animate">
+                    <form id="contact-form">
+                        <div class="mb-6">
+                            <label for="name" class="block text-slate-700 font-medium mb-2">Nombre</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-slate-700 font-medium mb-2">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-slate-700 font-medium mb-2">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none transition" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-cyan-700 text-white font-bold py-3 px-8 rounded-full hover:bg-cyan-800 transition transform hover:scale-105 shadow-lg">
+                                Enviar Mensaje
+                            </button>
+                        </div>
+                         <p id="form-feedback" class="text-center mt-4 text-green-600"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <img src="image_bf3a5b.jpg" alt="Logo Ecos de Lluvia" class="h-16 w-auto mx-auto mb-4">
+            <p>&copy; 2025 Ecos de Lluvia. Todos los derechos reservados.</p>
+            <p class="text-sm text-slate-300 mt-2">Un proyecto de ciencia para un futuro sostenible.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu on link click
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Animate sections on scroll
+            const sections = document.querySelectorAll('.section-animate');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Contact form simulation
+            const contactForm = document.getElementById('contact-form');
+            const formFeedback = document.getElementById('form-feedback');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                formFeedback.textContent = '¡Gracias! Tu mensaje ha sido enviado.';
+                contactForm.reset();
+                setTimeout(() => {
+                    formFeedback.textContent = '';
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>
